@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Генератор паролей</string>
+    <string name="action_settings">Настройки</string>
+    <string name="mainactivity_text_password">Пароль</string>
+    <string name="action_numbers_checkbox">цифры</string>
+    <string name="action_special_checkbox">спец. символы</string>
+    <string name="action_info">%s символов используя</string>
+    <string name="action_button_copy_description">Скопировать пароль в буфер обмена</string>
+    <string name="action_button_generate_description">Сгенерировать пароль</string>
+    <string name="action_tips_title">Советы</string>
+    <string name="action_write_text">Написать мне</string>
+    <string name="title_activity_tips">Советы</string>
+    <string name="title_activity_email">Напишите мне</string>
+    <string name="tips_text_title">Преимущества генератора паролей</string>
+    <string name="tips_text"/>
+    <string name="tips_text_desctiption">Генератор паролей – это незаменимый сервис, позволяющий обеспечить личную безопасность в сети. Такие программы случайным образом генерируют пароль, используя строчные, заглавные буквы и цифры. В результате работы генератора вы получаете последовательность знаков, которую можете использовать для пароля. Случайным образом сгенерированные последовательности повторить невозможно. Поэтому ваш почтовый ящик, скайп, аккаунт в соцсети, доступ к интернету через Wi-Fi будут надежно защищены от посягательств злоумышленников. Генератор паролей – это наиболее быстрый способ их создания. Теперь пользователям совершенно незачем ломать голову, придумывая такую последовательность. Generator все сделает за них, а качество программы гарантирует неспособность злоумышленников взломать такой пароль и получить доступ к вашей личной информации в сети. Используйте наиболее эффективные средства защиты от действий злоумышленников!</string>
+    <string name="mainactivity_web_version">Веб-версия: <a href="https://1informer.com/generator-passwords-online/">1informer.com</a></string>
+    <string name="main_time_to_crack_online_title">Время взлома онлайн</string>
+    <string name="main_online_with_protection_title">С защитой</string>
+    <string name="main_online_without_protection_title">Без защиты</string>
+    <string name="main_time_to_crack_offline_title">Время взлома оффлайн</string>
+    <string name="main_offline_with_protection_title">Медленный</string>
+    <string name="main_offline_without_protection_title">Ускоренный</string>
+    <string name="main_password_strength_text">Сила пароля:</string>
+</resources>
