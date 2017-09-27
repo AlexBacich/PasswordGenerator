@@ -22,4 +22,15 @@
     <string name="main_offline_with_protection_title">Медленный</string>
     <string name="main_offline_without_protection_title">Ускоренный</string>
     <string name="main_password_strength_text">Сила пароля:</string>
+    <string name="info_text">%d символов используя</string>
+    <string name="sendemail_email">a.bagratovich@gmail.com</string>
+    <string name="sendemail_subject">Отзыв о приложении \'Генератор паролей\'</string>
+    <string name="sendemail_body" />
+    <string name="sendemail_with">Отправить с помощью</string>
+    <string name="copy_to_bufer">Пароль скопирован в буфер обмена</string>
+    <string name="passstrength_weak">слабый</string>
+    <string name="passstrength_fair">умеренный</string>
+    <string name="good">хороший</string>
+    <string name="passstrength_strong">отличный</string>
+    <string name="passstrength_verystrong">превосходный</string>
 </resources>

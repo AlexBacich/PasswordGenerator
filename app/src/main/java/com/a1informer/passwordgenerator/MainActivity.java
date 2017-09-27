@@ -44,19 +44,6 @@ public class MainActivity extends AppCompatActivity {
     private static boolean numbers = false;
     private static boolean special = false;
 
-    // constants for email
-    private static final String SEND_EMAIL = "a.bagratovich@gmail.com";
-    private static final String SEND_SUBJECT = "Отзыв о приложении 'Генератор паролей'";
-    private static final String SEND_BODY = "";
-    private static final String SEND_WITH = "Отправить с помощью";
-
-    private static final String INFO_TEXT = "%s символов используя";
-    private static final String PASSWORD_COPIED_MESSAGE = "Пароль скопирован в буфер обмена";
-    private static final String PASSWORD_STRENGTH_WEAK = "слабый";
-    private static final String PASSWORD_STRENGTH_FAIR = "умеренный";
-    private static final String PASSWORD_STRENGTH_GOOD = "хороший";
-    private static final String PASSWORD_STRENGTH_STRONG = "отличный";
-    private static final String PASSWORD_STRENGTH_VERY_STRONG = "превосходный";
 
 //    Used for password crack length time. Not used at the moment. To use uncoment and replace content_main.xml with content_main_with_protection.xml
 
@@ -74,18 +61,19 @@ public class MainActivity extends AppCompatActivity {
 //        else return DURATION_MONTHS;
 //    }
 
+
     private String getReadableScore(int i) {
         switch (i) {
             case 0:
-                return PASSWORD_STRENGTH_WEAK;
+                return getString(R.string.passstrength_weak);
             case 1:
-                return PASSWORD_STRENGTH_FAIR;
+                return getString(R.string.passstrength_fair);
             case 2:
-                return PASSWORD_STRENGTH_GOOD;
+                return getString(R.string.good);
             case 3:
-                return PASSWORD_STRENGTH_STRONG;
+                return getString(R.string.passstrength_strong);
             case 4:
-                return PASSWORD_STRENGTH_VERY_STRONG;
+                return getString(R.string.passstrength_verystrong);
             default:
                 throw new IllegalArgumentException("Values should be in between 0-4");
         }
@@ -150,7 +138,7 @@ public class MainActivity extends AppCompatActivity {
         makePasswordMeasurementsUpdateFields(passwordField.getText().toString());
 
 
-        info.setText(String.format(INFO_TEXT, length));
+        info.setText(getString(R.string.info_text, length));
 
         ImageButton generatePassword = findViewById(R.id.button_generate);
         generatePassword.setOnClickListener(new View.OnClickListener() {
@@ -168,9 +156,10 @@ public class MainActivity extends AppCompatActivity {
                 ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
                 ClipData clip = ClipData.newPlainText("Password", passwordField.getText().toString());
                 clipboard.setPrimaryClip(clip);
-                Toast.makeText(MainActivity.this, PASSWORD_COPIED_MESSAGE, Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivity.this, R.string.copy_to_bufer, Toast.LENGTH_LONG).show();
             }
         });
+
 
         TextView webVersion = findViewById(R.id.text_web_version);
         webVersion.setMovementMethod(LinkMovementMethod.getInstance());
@@ -186,7 +175,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean b) {
                 length = MIN_LENGTH + (progress * STEP);
-                info.setText(String.format(INFO_TEXT, length));
+                info.setText(getString(R.string.info_text, length));
             }
 
             @Override
@@ -217,6 +206,8 @@ public class MainActivity extends AppCompatActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
+
+
         Intent intent;
         switch (id) {
             case R.id.action_tips:
@@ -227,10 +218,10 @@ public class MainActivity extends AppCompatActivity {
                 Intent emailIntent = new Intent(android.content.Intent.ACTION_SEND);
                 emailIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 emailIntent.setType("vnd.android.cursor.item/email");
-                emailIntent.putExtra(android.content.Intent.EXTRA_EMAIL, new String[]{SEND_EMAIL});
-                emailIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, SEND_SUBJECT);
-                emailIntent.putExtra(android.content.Intent.EXTRA_TEXT, SEND_BODY);
-                startActivity(Intent.createChooser(emailIntent, SEND_WITH));
+                emailIntent.putExtra(android.content.Intent.EXTRA_EMAIL, new String[]{getString(R.string.sendemail_email)});
+                emailIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, getString(R.string.sendemail_subject));
+                emailIntent.putExtra(android.content.Intent.EXTRA_TEXT, getString(R.string.sendemail_body));
+                startActivity(Intent.createChooser(emailIntent, getString(R.string.sendemail_body)));
                 break;
         }
 
